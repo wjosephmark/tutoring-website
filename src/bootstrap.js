@@ -3,19 +3,34 @@ import ReactDOM from "react-dom";
 import { useRoutes, A } from "hookrouter"
 
 import App from "./components/app";
+import Availability from "./components/availability"
+import Contact from "./components/contact"
+
 import "./style/main.scss"
 
-import "./style/main.scss";
-
 const routes = {
-  "/": () => <App />
+  "/": () => <App />,
+  "/contact": () => <Contact />,
+  "/availability": () => <Availability />
 }
 
 function Main() {
   return(
     <div>
-      <div className="navbar">
-        <A href="/">Home</A>
+      <div className="navbar-wrapper">
+        <div className="logo">
+          <div className="black-text">
+            <h1>Tutoring By</h1>
+          </div>
+          <div className="pink-text">
+            <h1>Kilee</h1>
+          </div>
+        </div>
+        <div className="navbar">
+          <A href="/">Home</A>
+          <A href="/availability">Availability</A>
+          <A href="/contact">Contact</A>
+        </div>
       </div>
       {useRoutes(routes)}
     </div>

@@ -27,9 +27,15 @@ function Main() {
           </div>
         </div>
         <div className="navbar">
+        <div className="nav-link-wrapper">
           <A className="nav-link" href="/">Home</A>
+        </div>
+        <div className="nav-link-wrapper">
           <A className="nav-link" href="/availability">Availability</A>
+        </div>
+        <div className="nav-link-wrapper">
           <A className="nav-link" href="/contact">Contact</A>
+        </div>
         </div>
       </div>
       {useRoutes(routes)}

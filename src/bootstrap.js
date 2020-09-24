@@ -1,17 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { useRoutes, A } from "hookrouter"
+
 import App from "./components/app";
+import "./style/main.scss"
 
 import "./style/main.scss";
 
-function main() {
-  ReactDOM.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
-    document.querySelector(".app-wrapper")
-  );
+const routes = {
+  "/": () => <App />
 }
 
-document.addEventListener("DOMContentLoaded", main);
+function Main() {
+  return(
+    <div>
+      <div className="navbar">
+        <A href="/">Home</A>
+      </div>
+      {useRoutes(routes)}
+    </div>
+  )
+}
+
+ReactDOM.render(<Main />, document.querySelector(".app-wrapper"))

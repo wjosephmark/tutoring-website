@@ -7,6 +7,21 @@
     align-items: center;
     justify-content: center;
 
+    .contact-header-wrapper{
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+
+        h1 {
+            border-bottom: rgb(255, 43, 209) solid 2px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 50px;
+            color: rgb(255, 43, 209);
+        }
+    }
+
     .contact-link-wrapper{
 
         .mail-image {

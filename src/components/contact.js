@@ -15,6 +15,9 @@ export default function Contact() {
 
     return (
         <div className="contact-app">
+            <div className="contact-header-wrapper">
+                <h1>Conctact Me</h1>
+            </div>
             <div className="contact-link-wrapper">
                 <div className="email-wrapper">
                     <img 

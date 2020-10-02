@@ -27,8 +27,11 @@
         align-items: center;
         justify-content: space-evenly;
         height: 250px;
+        width: 300px;
         font-family: 'Rubik', sans-serif;
         font-size: 20px;
+        border-top: black 2px solid;
+        border-bottom: black 2px solid;
     }
 
     .nav-contact-wrapper {

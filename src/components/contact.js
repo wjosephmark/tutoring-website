@@ -42,6 +42,7 @@ export default function Contact() {
                     />
                     <div className="email-link-wrapper">
                         <a 
+                            target="_blank"
                             href="mailto:tutoringbykilee@gmail.com"
                             id="email-link"
                         >tutoringbykilee@gmail.com</a>

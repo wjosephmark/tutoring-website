@@ -15,7 +15,7 @@ const routes = {
 }
 
 function Main() {
-  const [home, setHome] = useState("nav-link")
+  const [home, setHome] = useState("nav-link-active")
   const [availability, setAvailability] = useState("nav-link")
   const [contact, setContact] = useState("nav-link")
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom";
 import { useRoutes, A } from "hookrouter"
 
@@ -15,6 +15,28 @@ const routes = {
 }
 
 function Main() {
+  const [home, setHome] = useState("nav-link")
+  const [availability, setAvailability] = useState("nav-link")
+  const [contact, setContact] = useState("nav-link")
+
+  const handleHomeClick = () => {
+    setHome("nav-link-active")
+    setAvailability("nav-link")
+    setContact("nav-link")
+  }
+  
+    const handleAvailabilityClick = () => {
+      setHome("nav-link")
+      setAvailability("nav-link-active")
+      setContact("nav-link")
+    }
+
+  const handleContactClick = () => {
+    setHome("nav-link")
+    setAvailability("nav-link")
+    setContact("nav-link-active")
+  }
+
   return(
     <div>
       <div className="navbar-wrapper">
@@ -28,13 +50,13 @@ function Main() {
         </div>
         <div className="navbar">
         <div className="nav-link-wrapper">
-          <A className="nav-link" href="/">Home</A>
+          <A className={home} onClick={() => handleHomeClick()} href="/">Home</A>
         </div>
         <div className="nav-link-wrapper">
-          <A className="nav-link" href="/availability">Availability</A>
+          <A className={availability} onClick={() => handleAvailabilityClick()} href="/availability">Availability</A>
         </div>
         <div className="nav-link-wrapper">
-          <A className="nav-link" href="/contact">Contact</A>
+          <A className={contact} onClick={() => handleContactClick()} href="/contact">Contact</A>
         </div>
         </div>
       </div>

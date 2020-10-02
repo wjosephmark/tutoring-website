@@ -44,10 +44,6 @@
         justify-content: space-evenly;
 
         .nav-link-wrapper{   
-            
-            a:active{
-                color: rgb(255, 43, 209);
-            }
 
             &:hover{
                 cursor: pointer;
@@ -57,6 +53,12 @@
                 font-family: 'Rubik', sans-serif;
                 color: black;
             } 
+
+            .nav-link-active {
+                font-family: 'Dancing Script', cursive;
+                color: rgb(255, 43, 209);
+                font-size: 21px;
+            }
         }
     }
 }

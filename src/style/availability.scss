@@ -30,4 +30,15 @@
         font-family: 'Rubik', sans-serif;
         font-size: 20px;
     }
+
+    .nav-contact-wrapper {
+        padding-top: 20px;
+        font-family: 'Rubik', sans-serif;
+        color: rgb(255, 43, 209);
+        text-decoration: underline;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }

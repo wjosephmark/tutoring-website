@@ -5,20 +5,23 @@ import { useRoutes, A } from "hookrouter"
 import App from "./components/app";
 import Availability from "./components/availability"
 import Contact from "./components/contact"
+import Auth from "./components/auth"
 
 import "./style/main.scss"
 
-const routes = {
-  "/": () => <App />,
-  "/contact": () => <Contact />,
-  "/availability": () => <Availability />
-}
 
 function Main() {
   const [home, setHome] = useState("nav-link-active")
   const [availability, setAvailability] = useState("nav-link")
   const [contact, setContact] = useState("nav-link")
-
+  const [loggedInStatus, setLoggedInStatus] = useState(false)
+  
+  const routes = {
+    "/": () => <App />,
+    "/contact": () => <Contact />,
+    "/availability": () => <Availability loggedInStatus={loggedInStatus} />,
+    "/login": () => <Auth  loggedInStatus={loggedInStatus} setLoggedInStatus={setLoggedInStatus} />
+  }
   const handleHomeClick = () => {
     setHome("nav-link-active")
     setAvailability("nav-link")

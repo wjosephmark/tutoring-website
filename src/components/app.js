@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Icons from "./icons"
-import { faDice } from "@fortawesome/free-solid-svg-icons";
 
 export default function App() {
 

@@ -33,6 +33,12 @@
         border-top: black 2px solid;
         border-bottom: black 2px solid;
         margin-top: 30px;
+
+        .hours-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
     }
 
     .nav-contact-wrapper {

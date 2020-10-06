@@ -56,17 +56,17 @@ export default function Availability(props) {
         </div>
         <div className="days-wrapper">
           <div className="hours-wrapper">
-            <p>Monday: {monday}</p>
+            <p>Monday:</p>
             <input type="text" placeholder="Edit Monday hours" onChange={e => setMonday(e.target.value)} />
           </div>   
   
           <div className="hours-wrapper">
-            <p>Tuesday: {tuesday}</p>
+            <p>Tuesday:</p>
             <input type="text" placeholder="Edit Tuesday hours" onChange={e => setTuesday(e.target.value)} />
           </div>  
   
           <div className="hours-wrapper">
-            <p>Wednesday: {wednesday}</p>
+            <p>Wednesday:</p>
             <input type="text" placeholder="Edit Wednesday hours" onChange={e => setWednesday(e.target.value)} />
           </div>  
   
@@ -76,12 +76,12 @@ export default function Availability(props) {
           </div>  
   
           <div className="hours-wrapper">
-            <p>Friday: {friday}</p>
+            <p>Friday:}</p>
             <input type="text" placeholder="Edit Friday hours" onChange={e => setFriday(e.target.value)} />
           </div>   
   
           <div className="hours-wrapper">
-            <p>Saturday: {saturday}</p>
+            <p>Saturday:</p>
             <input type="text" placeholder="Edit Saturday hours" onChange={e => setSaturday(e.target.value)} />
           </div>   
         </div>

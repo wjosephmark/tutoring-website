@@ -14,7 +14,7 @@ function Main() {
   const [home, setHome] = useState("nav-link-active")
   const [availability, setAvailability] = useState("nav-link")
   const [contact, setContact] = useState("nav-link")
-  const [loggedInStatus, setLoggedInStatus] = useState(false)
+  const [loggedInStatus, setLoggedInStatus] = useState(true)
   
   const routes = {
     "/": () => <App />,

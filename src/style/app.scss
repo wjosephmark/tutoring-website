@@ -2,11 +2,47 @@
     font-family: 'Rubik', sans-serif;
     height: 1000px;
     width: 100%;
-    background-image: url("https://www.lockheedmartin.com/content/dam/lockheed-martin/eo/photo/webt/webt-woman-in-math-lead.jpg.pc-adaptive.full.medium.jpeg");
-    background-size: 100% 100%;
     background-repeat: no-repeat;
-    opacity: .5;
+    background-image: url("https://i.ibb.co/BN7nBYQ/imageedit-1-6501141933.jpg");
+    background-size: 100% 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    
+    .content-wrapper {
+        margin-top: 100px;
+        background-color: rgba(255, 255, 255, 0.877);
+        width: 80%;
+        height: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 12px;
 
+        .tbk-wrapper{
+            padding-top: 30px;
+        }
+
+        .home-text-wrapper {
+            width: 72%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+            
+            .home-text {
+                margin-top: 30px;
+                width: 100%;
+                text-align: center;
+                font-size: 23px;
+            }
+
+        }
+
+    
+
+    }
 
 }
 

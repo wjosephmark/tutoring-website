@@ -4,7 +4,6 @@ export default function Contact(props) {
 
     useEffect(() => {
         props.handleContactClick()
-        props.handlePageLoad()
       }, [])
 
     return (

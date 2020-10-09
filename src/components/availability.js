@@ -11,8 +11,7 @@ export default function Availability(props) {
   const [saturday, setSaturday] = useState("12 p.m. - 5 p.m.")
 
   useEffect(() => {
-    props.setAvailability("nav-link-active")
-    props.handlePageLoad()
+    props.handleAvailabilityClick("nav-link-active")
   }, [])
 
   if(props.loggedInStatus == false) {

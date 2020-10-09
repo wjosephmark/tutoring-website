@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from "react";
+import {navigate} from "hookrouter"
 
 export default function App(props) {
 
   useEffect(() => {
     props.handleHomeClick()
-    props.handlePageLoad()
   }, [])
 
   return (
     <div className="app">
       <div className="content-wrapper">
         <div className="tbk-wrapper">
-          <h1 id="tutoring-by">Tutoring by</h1>
-          <h1 id="kilee">Kilee</h1>
+          <h1>Tutoring by Kilee</h1>
+        </div>
+        <div className="home-text-wrapper">
+          <p className="home-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in tempus est. Sed ac urna lobortis, laoreet arcu sit amet, lacinia dui. Sed mattis lectus eget enim placerat, nec lobortis sapien tincidunt. Maecenas eleifend ultrices massa vel commodo. Etiam faucibus neque sed nibh venenatis sodales. Proin sodales condimentum fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sagittis, risus sed maximus egestas, nisl purus consectetur turpis, at efficitur risus enim nec urna. Aliquam convallis, diam et efficitur ornare, elit elit cursus erat, a vehicula velit dolor id risus. Vivamus suscipit ultricies urna, in pulvinar nulla tempor eu. Etiam sapien ligula, maximus eget nisi id, tincidunt ultrices turpis. Phasellus a feugiat orci. Proin dolor orci, sollicitudin in dui vel, vestibulum semper libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in tempus est. Sed ac urna lobortis, laoreet arcu sit amet, lacinia dui. Sed mattis lectus eget enim placerat, nec lobortis sapien tincidunt. Maecenas eleifend ultrices massa vel commodo. Etiam faucibus neque sed nibh venenatis sodales. Proin sodales condimentum fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sagittis, risus sed maximus egestas, nisl purus consectetur turpis, at efficitur risus enim nec urna. Aliquam convallis, diam et efficitur ornare, elit elit cursus erat, a vehicula velit dolor id risus. Vivamus suscipit ultricies urna, in pulvinar nulla tempor eu. Etiam sapien ligula, maximus eget nisi id, tincidunt ultrices turpis. Phasellus a feugiat orci. Proin dolor orci, sollicitudin in dui vel, vestibulum semper libero. 
+          </p>
         </div>
       </div>
     </div>

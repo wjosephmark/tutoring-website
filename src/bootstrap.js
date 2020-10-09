@@ -18,16 +18,15 @@ function Main() {
   const [loggedInStatus, setLoggedInStatus] = useState(false)
   
   const routes = {
-    "/": () => <App handleHomeClick={handleHomeClick} handlePageLoad={handlePageLoad}/>,
-    "/contact": () => <Contact handleContactClick={handleContactClick} handlePageLoad={handlePageLoad}/>,
-    "/availability": () => <Availability availability={availability} setAvailability={setAvailability} handlePageLoad={handlePageLoad} loggedInStatus={loggedInStatus}/>,
+    "/": () => <App home={home} setHome={setHome} handleHomeClick={handleHomeClick} />,
+    "/contact": () => <Contact handleContactClick={handleContactClick} />,
+    "/availability": () => <Availability handleAvailabilityClick={handleAvailabilityClick}  loggedInStatus={loggedInStatus}/>,
     "/login": () => <Auth  loggedInStatus={loggedInStatus} setLoggedInStatus={setLoggedInStatus} />
   }
   const handleHomeClick = () => {
     setHome("nav-link-active")
     setAvailability("nav-link")
     setContact("nav-link")
-    console.log(home, "from home" )
   }
   
   const handleAvailabilityClick = () => {
@@ -42,13 +41,14 @@ function Main() {
     setContact("nav-link-active")
   }
 
-  const handlePageLoad = () => {
-    if(home == "nav-link-active") {
-      setNavbarClass("inactive")
-    } else {
-      setNavbarClass("navbar-wrapper")
-    }
-  }
+  // const handlePageLoad = () => {
+  //   console.log(home)
+  //   if(home == "nav-link-active") {
+  //     setNavbarClass("inactive")
+  //   } else {
+  //     setNavbarClass("navbar-wrapper")
+  //   }
+  // }
 
   return(
     <div>

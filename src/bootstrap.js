@@ -11,28 +11,30 @@ import "./style/main.scss"
 
 
 function Main() {
-  const [home, setHome] = useState("nav-link-active")
+  const [home, setHome] = useState("nav-link")
   const [availability, setAvailability] = useState("nav-link")
   const [contact, setContact] = useState("nav-link")
+  const [navbarClass, setNavbarClass] = useState("navbar-wrapper")
   const [loggedInStatus, setLoggedInStatus] = useState(false)
   
   const routes = {
-    "/": () => <App />,
-    "/contact": () => <Contact />,
-    "/availability": () => <Availability loggedInStatus={loggedInStatus} />,
+    "/": () => <App handleHomeClick={handleHomeClick} handlePageLoad={handlePageLoad}/>,
+    "/contact": () => <Contact handleContactClick={handleContactClick} handlePageLoad={handlePageLoad}/>,
+    "/availability": () => <Availability availability={availability} setAvailability={setAvailability} handlePageLoad={handlePageLoad} loggedInStatus={loggedInStatus}/>,
     "/login": () => <Auth  loggedInStatus={loggedInStatus} setLoggedInStatus={setLoggedInStatus} />
   }
   const handleHomeClick = () => {
     setHome("nav-link-active")
     setAvailability("nav-link")
     setContact("nav-link")
+    console.log(home, "from home" )
   }
   
-    const handleAvailabilityClick = () => {
-      setHome("nav-link")
-      setAvailability("nav-link-active")
-      setContact("nav-link")
-    }
+  const handleAvailabilityClick = () => {
+    setHome("nav-link")
+    setAvailability("nav-link-active")
+    setContact("nav-link")
+  }
 
   const handleContactClick = () => {
     setHome("nav-link")
@@ -40,9 +42,17 @@ function Main() {
     setContact("nav-link-active")
   }
 
+  const handlePageLoad = () => {
+    if(home == "nav-link-active") {
+      setNavbarClass("inactive")
+    } else {
+      setNavbarClass("navbar-wrapper")
+    }
+  }
+
   return(
     <div>
-      <div className="navbar-wrapper">
+      <div className={navbarClass}>
         <div className="logo">
           <div className="black-text">
             <h1>Tutoring By</h1>

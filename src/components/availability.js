@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {navigate} from "hookrouter";
 
 export default function Availability(props) {
@@ -9,6 +9,11 @@ export default function Availability(props) {
   const [thursday, setThursday] = useState("12 p.m. - 7 p.m.")
   const [friday, setFriday] = useState("12 p.m. - 6 p.m.")
   const [saturday, setSaturday] = useState("12 p.m. - 5 p.m.")
+
+  useEffect(() => {
+    props.setAvailability("nav-link-active")
+    props.handlePageLoad()
+  }, [])
 
   if(props.loggedInStatus == false) {
     return (

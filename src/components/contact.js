@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Contact() {
+export default function Contact(props) {
+
+    useEffect(() => {
+        props.handleContactClick()
+        props.handlePageLoad()
+      }, [])
 
     return (
         <div className="contact-app">

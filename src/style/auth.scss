@@ -27,6 +27,18 @@
             height: 40px;
             border: solid 2px rgb(255, 43, 209);
             border-radius: 12px;
+
+            &:focus{
+                outline: none;
+            }
+
+            &:active{
+                background-color: rgb(172, 172, 172);
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }

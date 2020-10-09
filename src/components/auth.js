@@ -1,4 +1,6 @@
 import React, {useState} from "react"
+import {navigate} from "hookrouter";
+
 
 export default function Auth(props) {
     const [username, setUsername] = useState("")
@@ -10,7 +12,7 @@ export default function Auth(props) {
     const handleLoginClick = () => {
         if(username == u && password == p) {
             props.setLoggedInStatus(true)
-            console.log(props.loggedInStatus)
+            navigate("/availability")
         }
     }
 

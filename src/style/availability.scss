@@ -38,6 +38,17 @@
             display: flex;
             align-items: center;
             justify-content: space-evenly;
+
+            input {
+                border: none;
+                font-size: 20px;
+                text-align: center;
+
+                &:focus{
+                    outline: none;
+                    border-bottom: rgb(0, 0, 0) solid 2px;
+                }
+            }
         }
     }
 

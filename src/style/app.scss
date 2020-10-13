@@ -27,8 +27,22 @@
         .home-text-wrapper {
             width: 72%;
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+
+            .first-image-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin-top: 40px;
+
+                #first-image {
+                    width: 50%;
+                    border-radius: 12px;
+                }
+            }
 
             
             .home-text {

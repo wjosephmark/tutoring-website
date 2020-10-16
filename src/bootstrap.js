@@ -41,15 +41,6 @@ function Main() {
     setContact("nav-link-active")
   }
 
-  // const handlePageLoad = () => {
-  //   console.log(home)
-  //   if(home == "nav-link-active") {
-  //     setNavbarClass("inactive")
-  //   } else {
-  //     setNavbarClass("navbar-wrapper")
-  //   }
-  // }
-
   return(
     <div>
       <div className={navbarClass}>

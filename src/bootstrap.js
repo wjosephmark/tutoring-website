@@ -22,34 +22,34 @@ function Main() {
     "/": () => <App home={home} setHome={setHome} handleHomeClick={handleHomeClick} />,
     "/contact": () => <Contact handleContactClick={handleContactClick} />,
     "/availability": () => <Availability handleAvailabilityClick={handleAvailabilityClick}  loggedInStatus={loggedInStatus}/>,
-    "/login": () => <Auth  loggedInStatus={loggedInStatus} setLoggedInStatus={setLoggedInStatus} />
+    "/login": () => <Auth  handleLoginClick={handleLoginClick} />
   }
   const handleHomeClick = () => {
     setHome("nav-link-active")
     setAvailability("nav-link")
     setContact("nav-link")
-    setLoggedInStatus("nav-link")
+    setLogin("nav-link")
   }
   
   const handleAvailabilityClick = () => {
     setHome("nav-link")
     setAvailability("nav-link-active")
     setContact("nav-link")
-    setLoggedInStatus("nav-link")
+    setLogin("nav-link")
   }
 
   const handleContactClick = () => {
     setHome("nav-link")
     setAvailability("nav-link")
     setContact("nav-link-active")
-    setLoggedInStatus("nav-link")
+    setLogin("nav-link")
   }
 
   const handleLoginClick = () => {
     setHome("nav-link")
     setAvailability("nav-link")
     setContact("nav-link")
-    setLoggedInStatus("nav-link-active")
+    setLogin("nav-link-active")
   }
 
   return(

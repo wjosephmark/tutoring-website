@@ -30,6 +30,7 @@ export default function Auth(props) {
 
     useEffect(() => {
         getUsers()
+        props.handleLoginClick()
       }, [])
     
 

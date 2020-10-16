@@ -22,19 +22,10 @@ export default function Auth(props) {
       }
 
     const handleLoginClick = () => {
-        users.forEach(user => {
-            if(user.email == email) {
-                setTargetUser(user)
-            }
-        });
         if(targetUser.email == email && targetUser.password == password) {
             props.setLoggedInStatus(true)
             navigate("/availability")
         }
-    }
-
-    const handleCreateAccountClick = () => {
-        setAuthStatus("create-wrapper")
     }
 
     const handleSubmit = (event) => {
@@ -67,6 +58,14 @@ export default function Auth(props) {
         }
       }
 
+    const handleEmailChange = (e) => {
+        users.forEach(user => {
+            if(user.email == email) {
+                setTargetUser(user)
+            }
+        });
+    }
+
     useEffect(() => {
         getUsers()
         props.handleLoginClick()
@@ -77,13 +76,14 @@ export default function Auth(props) {
             <div className="auth-app">
                 <div className={authStatus}>
                     <div className="input-wrapper">
+                        {/* <input type="text" placeholder="Email" onChange={e => handleEmailChange(e)} /> */}
                         <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} />
                         <input type="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />
                         <p>{invalidLogin}</p>
                     </div>
                     <div className="buttons-wrapper">
                         <button className="btn" onClick={() => handleLoginClick()}>Login</button>
-                        <button className="btn"  onClick={() => handleCreateAccountClick()}>Create Account</button>
+                        <button className="btn"  onClick={() =>setAuthStatus("create-wrapper")}>Create Account</button>
                     </div>
     
                 </div>

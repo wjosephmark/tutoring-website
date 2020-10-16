@@ -24,7 +24,7 @@ function Main() {
     "/": () => <App home={home} setHome={setHome} handleHomeClick={handleHomeClick} />,
     "/contact": () => <Contact handleContactClick={handleContactClick} />,
     "/availability": () => <Availability handleAvailabilityClick={handleAvailabilityClick}  loggedInStatus={loggedInStatus}/>,
-    "/login": () => <Auth  handleLoginClick={handleLoginClick} />,
+    "/login": () => <Auth  handleLoginClick={handleLoginClick} setLoggedInStatus={setLoggedInStatus} />,
     "/account": () => <Account  handleAccountClick={handleAccountClick} />
   }
   const handleHomeClick = () => {

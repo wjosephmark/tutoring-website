@@ -14,6 +14,7 @@ function Main() {
   const [home, setHome] = useState("nav-link")
   const [availability, setAvailability] = useState("nav-link")
   const [contact, setContact] = useState("nav-link")
+  const [login, setLogin] = useState("nav-link")
   const [navbarClass, setNavbarClass] = useState("navbar-wrapper")
   const [loggedInStatus, setLoggedInStatus] = useState(false)
   
@@ -27,18 +28,28 @@ function Main() {
     setHome("nav-link-active")
     setAvailability("nav-link")
     setContact("nav-link")
+    setLoggedInStatus("nav-link")
   }
   
   const handleAvailabilityClick = () => {
     setHome("nav-link")
     setAvailability("nav-link-active")
     setContact("nav-link")
+    setLoggedInStatus("nav-link")
   }
 
   const handleContactClick = () => {
     setHome("nav-link")
     setAvailability("nav-link")
     setContact("nav-link-active")
+    setLoggedInStatus("nav-link")
+  }
+
+  const handleLoginClick = () => {
+    setHome("nav-link")
+    setAvailability("nav-link")
+    setContact("nav-link")
+    setLoggedInStatus("nav-link-active")
   }
 
   return(
@@ -53,15 +64,18 @@ function Main() {
           </div>
         </div>
         <div className="navbar">
-        <div className="nav-link-wrapper">
-          <A className={home} onClick={() => handleHomeClick()} href="/">Home</A>
-        </div>
-        <div className="nav-link-wrapper">
-          <A className={availability} onClick={() => handleAvailabilityClick()} href="/availability">Availability</A>
-        </div>
-        <div className="nav-link-wrapper">
-          <A className={contact} onClick={() => handleContactClick()} href="/contact">Contact</A>
-        </div>
+          <div className="nav-link-wrapper">
+            <A className={home} onClick={() => handleHomeClick()} href="/">Home</A>
+          </div>
+          <div className="nav-link-wrapper">
+            <A className={availability} onClick={() => handleAvailabilityClick()} href="/availability">Availability</A>
+          </div>
+          <div className="nav-link-wrapper">
+            <A className={contact} onClick={() => handleContactClick()} href="/contact">Contact</A>
+          </div>
+          <div className="nav-link-wrapper">
+            <A className={login} onClick={() => handleLoginClick()} href="/login">Login</A>
+          </div>
         </div>
       </div>
       {useRoutes(routes)}

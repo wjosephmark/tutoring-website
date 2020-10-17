@@ -26,7 +26,7 @@ function Main() {
     "/contact": () => <Contact handleContactClick={handleContactClick} />,
     "/availability": () => <Availability handleAvailabilityClick={handleAvailabilityClick}  loggedInStatus={loggedInStatus}/>,
     "/login": () => <Auth  handleLoginClick={handleLoginClick} setLoggedInStatus={setLoggedInStatus} loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />,
-    "/account": () => <Account  handleAccountClick={handleAccountClick} />
+    "/account": () => <Account loggedInStatus={loggedInStatus} setLoggedInStatus={setLoggedInStatus}  handleAccountClick={handleAccountClick} setLoggedInUser={setLoggedInUser} loggedInUser={loggedInUser}/>
   }
   const handleHomeClick = () => {
     setHome("nav-link-active")

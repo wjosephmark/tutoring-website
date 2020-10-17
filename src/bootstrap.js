@@ -19,12 +19,13 @@ function Main() {
   const [account, setAccount] = useState("nav-link")
   const [navbarClass, setNavbarClass] = useState("navbar-wrapper")
   const [loggedInStatus, setLoggedInStatus] = useState(false)
+  const [loggedInUser, setLoggedInUser] = useState([])
   
   const routes = {
     "/": () => <App home={home} setHome={setHome} handleHomeClick={handleHomeClick} />,
     "/contact": () => <Contact handleContactClick={handleContactClick} />,
     "/availability": () => <Availability handleAvailabilityClick={handleAvailabilityClick}  loggedInStatus={loggedInStatus}/>,
-    "/login": () => <Auth  handleLoginClick={handleLoginClick} setLoggedInStatus={setLoggedInStatus} />,
+    "/login": () => <Auth  handleLoginClick={handleLoginClick} setLoggedInStatus={setLoggedInStatus} loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser} />,
     "/account": () => <Account  handleAccountClick={handleAccountClick} />
   }
   const handleHomeClick = () => {

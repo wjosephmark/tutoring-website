@@ -11,7 +11,7 @@ export default function Auth(props) {
     const [confirmPassword, setConfirmPassword] = useState("empty")
     const [authStatus, setAuthStatus] = useState("login-wrapper")
     const [users, setUsers] = useState([])
-    const [targetUser, setTargetUser] = useState("")
+    // const [targetUser, setTargetUser] = useState("")
     const [invalidLogin, setInvalidLogin] = useState("")
     const [differentPasswords, setDifferentPasswords] = useState("")
 
@@ -22,10 +22,7 @@ export default function Auth(props) {
       }
 
     const handleLoginClick = () => {
-        if(targetUser.email == email && targetUser.password == password) {
-            props.setLoggedInStatus(true)
-            navigate("/availability")
-        }
+        handleCredentialCheck()
     }
 
     const handleSubmit = (event) => {
@@ -58,10 +55,21 @@ export default function Auth(props) {
         }
       }
 
+    const handleCredentialCheck = () => {
+        if(props.loggedInUser.email == email && props.loggedInUser.password == password) {
+            props.setLoggedInStatus(true)
+            navigate("/availability")
+        }
+    }
+
     const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+
         users.forEach(user => {
             if(user.email == email) {
-                setTargetUser(user)
+                // setTargetUser(user)
+                props.setLoggedInUser(user)
+                console.log(props.loggedInUser)
             }
         });
     }
@@ -76,8 +84,8 @@ export default function Auth(props) {
             <div className="auth-app">
                 <div className={authStatus}>
                     <div className="input-wrapper">
-                        {/* <input type="text" placeholder="Email" onChange={e => handleEmailChange(e)} /> */}
-                        <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} />
+                        <input type="text" placeholder="Email" onChange={e => handleEmailChange(e)} />
+                        {/* <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} /> */}
                         <input type="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />
                         <p>{invalidLogin}</p>
                     </div>

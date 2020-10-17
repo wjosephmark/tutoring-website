@@ -10,7 +10,6 @@ export default function App(props) {
   return (
     <div className="app">
       <div className="content-wrapper">
-
         <div className="home-text-wrapper">
           <div className="first-image-wrapper"> 
             <img id="first-image" src="https://i.ibb.co/jMstMqQ/kid-doing-math.png" />

@@ -4,4 +4,27 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 400px;
+    
+    .content-wrapper{
+        font-size: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 200px;
+
+        .buttons-wrapper{
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    }
+
+    .inputs-wrapper{
+        height: 200px;
+        font-size: 30px;
+        
+    }
 }

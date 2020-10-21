@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {navigate} from 'hookrouter'
-import {axios} from "axios"
+import axios from "axios"
 
 export default function Account(props) {
     const [edit, setEdit] = useState(false)
@@ -11,6 +11,7 @@ export default function Account(props) {
     const email = props.loggedInUser.email
     const firstName = props.loggedInUser.first_name
     const lastName = props.loggedInUser.last_name
+    const id = props.loggedInUser._id
     
     const handleLogoutClick = () => {
         props.setLoggedInStatus(false)
@@ -18,9 +19,23 @@ export default function Account(props) {
         navigate("/")
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = event => {
+        event.preventDefault()
+        console.log(id)
+
+        if(newFirstName.length == 0) {
+            setNewFirstName(firstName)
+        }
+
+        if(newLastName.length == 0) {
+            setNewLastName(lastName)
+        }
+
+        if(newEmail.length == 0) {
+            setNewEmail(newEmail)
+        }
         axios.patch(
-            "http://localhost:5000/users",
+            `http://localhost:5000/users/${id}`,
             {
                 first_name: newFirstName,
                 last_name: newLastName,
@@ -44,7 +59,7 @@ export default function Account(props) {
                             <p>First name: {firstName}</p>
                             <p>Last name: {lastName}</p>
                             <div className="buttons-wrapper">
-                                <button onClick={() => setEdit(true)}>Edit Account</button>
+                                <button onClick={() => setEdit(true)}>Edit Account Info</button>
                                 <button onClick={() => handleLogoutClick()}>Logout</button>
                             </div>
                         </div>
@@ -52,19 +67,24 @@ export default function Account(props) {
             )
         } else {
             return(
-                <form className="account-app" onSubmit={() => handleSubmit()}>
+                <form className="account-app" onSubmit={() => handleSubmit(event)}>
                     <div className="inputs-wrapper">
                         <div className="input-wrapper">
-                            {/* <p>Email: </p> */}
-                            <input type="text" value={email} onChange={e => setNewEmail(e.target.value)} />
+                            <p>Email: </p>
+                            <input type="text" placeholder={email} onChange={e => setNewEmail(e.target.value)} />
                         </div>
                         <div className="input-wrapper">
                             <p>First name: </p>
-                            <input type="text" value={firstName} onChange={e => setNewFirstName(e.target.value)} />
+                            <input type="text" placeholder={firstName} onChange={e => setNewFirstName(e.target.value)} />
                         </div>
                         <div className="input-wrapper">
                             <p>Last name: </p>
-                            <input type="text" value={lastName} onChange={e => setNewLastName(e.target.value)} />
+                            <input type="text" placeholder={lastName} onChange={e => setNewLastName(e.target.value)} />
+                        </div>
+                        <div className="text-wrapper">
+                            <p id="password-reset">
+                                Please email me to reset your password
+                            </p>
                         </div>
                     </div>
                     <div className="buttons-wrapper">

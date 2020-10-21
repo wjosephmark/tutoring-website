@@ -11,7 +11,6 @@ export default function Auth(props) {
     const [confirmPassword, setConfirmPassword] = useState("empty")
     const [authStatus, setAuthStatus] = useState("login-wrapper")
     const [users, setUsers] = useState([])
-    // const [targetUser, setTargetUser] = useState("")
     const [invalidLogin, setInvalidLogin] = useState("")
     const [differentPasswords, setDifferentPasswords] = useState("")
 
@@ -19,10 +18,15 @@ export default function Auth(props) {
         axios.get("http://localhost:5000/users")
           .then(data => setUsers(data.data))
           .catch(err => console.log(err))
-      }
+    }
 
     const handleLoginClick = () => {
-        handleCredentialCheck()
+        console.log(props.loggedInUser)
+        console.log(email, password)
+        if(props.loggedInUser.email == email && props.loggedInUser.password == password) {
+            props.setLoggedInStatus(true)
+            navigate("/availability")
+        }
     }
 
     const handleSubmit = (event) => {
@@ -55,21 +59,12 @@ export default function Auth(props) {
         }
       }
 
-    const handleCredentialCheck = () => {
-        if(props.loggedInUser.email == email && props.loggedInUser.password == password) {
-            props.setLoggedInStatus(true)
-            navigate("/availability")
-        }
-    }
-
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
 
         users.forEach(user => {
             if(user.email == email) {
-                // setTargetUser(user)
                 props.setLoggedInUser(user)
-                console.log(props.loggedInUser)
             }
         });
     }

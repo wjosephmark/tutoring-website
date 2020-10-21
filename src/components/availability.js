@@ -1,18 +1,46 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"
 import {navigate} from "hookrouter";
 
 export default function Availability(props) {
   
-  const [monday, setMonday] = useState("3:30 p.m. - 7 p.m.")
-  const [tuesday , setTuesday] = useState("12 p.m. - 7 p.m.")
-  const [wednesday, setWednesday] = useState("3:30 p.m. - 7 p.m.")
-  const [thursday, setThursday] = useState("12 p.m. - 7 p.m.")
-  const [friday, setFriday] = useState("12 p.m. - 6 p.m.")
-  const [saturday, setSaturday] = useState("12 p.m. - 5 p.m.")
+  const [hours, setHours] = useState([])
+  const [monday, setMonday] = useState("")
+  const [tuesday , setTuesday] = useState("")
+  const [wednesday, setWednesday] = useState("")
+  const [thursday, setThursday] = useState("")
+  const [friday, setFriday] = useState("")
+  const [saturday, setSaturday] = useState("")
 
   useEffect(() => {
+    getHours()
     props.handleAvailabilityClick("nav-link-active")
+    populateHours()
   }, [])
+
+  const getHours = () => {
+    axios.get("http://localhost:5000/hours")
+      .then(data => setHours(data.data))
+      .catch(err => console.log(err))
+  }
+
+  const populateHours = () => {
+    hours.forEach(hour => {
+      if(hour.day == "Monday") {
+        setMonday(hour.hours)
+      } else if(hour.day == "Tuesday") {
+        setTuesday(hour.hours)
+      } else if(hour.day == "Wednesday") {
+        setWednesday(hour.hours)
+      } else if(hour.day == "Thursday") {
+        setThursday(hour.hours)
+      } else if(hour.day == "Friday") {
+        setFriday(hour.hours)
+      } else if(hour.day == "Saturday") {
+        setSaturday(hour.hours)
+      }
+    })
+  }
 
   if(props.loggedInStatus == false) {
     return (
@@ -20,6 +48,7 @@ export default function Availability(props) {
         <div className="header-wrapper">
           <h1>Availability</h1>
         </div>
+        <button onClick={() => populateHours()}>Click me</button>
         <div className="days-wrapper">
           <div className="hours-wrapper">
             <p>Monday: {monday}</p>

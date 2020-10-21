@@ -3,11 +3,39 @@
     align-items: center;
     justify-content: center;
 
+    .login-wrapper{
+        .buttons-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 300px;
+            button {
+                width: 80px;
+                height: 40px;
+                border: solid 2px rgb(255, 43, 209);
+                border-radius: 12px;
+                margin-top: -40px;
+
+                &:focus{
+                    outline: none;
+                }
+    
+                &:active{
+                    background-color: rgb(172, 172, 172);
+                }
+    
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
     .input-wrapper {
-        height: 300px;
+        height: 200px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-evenly;
 
         input {

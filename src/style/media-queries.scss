@@ -5,9 +5,8 @@
         height: 800px;
         width: 100%;
         background-repeat: no-repeat;
-        // background-image: url("https://i.ibb.co/BN7nBYQ/imageedit-1-6501141933.jpg");
+        background-image: url("https://i.ibb.co/BN7nBYQ/imageedit-1-6501141933.jpg");
         background-size: auto;
-        background-color: red;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -22,6 +21,7 @@
             align-items: center;
             justify-content: flex-start;
             border-radius: 12px;
+            padding-bottom: 10px;
     
             .tbk-wrapper{
                 padding-top: 30px;

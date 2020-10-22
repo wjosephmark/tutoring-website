@@ -21,6 +21,7 @@ export default function Availability(props) {
   const getHours = () => {
     axios.get("http://localhost:5000/hours")
       .then(data => setHours(data.data))
+      .then(populateHours())
       .catch(err => console.log(err))
   }
 
@@ -87,6 +88,7 @@ export default function Availability(props) {
         <div className="header-wrapper">
           <h1>Availability</h1>
         </div>
+        <button onClick={() => populateHours()}>Click me</button>
         <div className="days-wrapper">
           <div className="hours-wrapper">
             <p>Monday:</p>

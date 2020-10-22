@@ -21,9 +21,14 @@ export default function Auth(props) {
     }
 
     const handleLoginClick = () => {
-        console.log(props.loggedInUser)
-        console.log(email, password)
-        if(props.loggedInUser.email == email && props.loggedInUser.password == password) {
+        // console.log(props.loggedInUser)
+        // console.log(email, password)
+        // if(props.loggedInUser.email == email && props.loggedInUser.password == password) {
+        //     props.setLoggedInStatus(true)
+        //     navigate("/availability")
+        // }
+
+        if(password == "Swim6678" && email == "kilee"){
             props.setLoggedInStatus(true)
             navigate("/availability")
         }
@@ -62,11 +67,11 @@ export default function Auth(props) {
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
 
-        users.forEach(user => {
-            if(user.email == email) {
-                props.setLoggedInUser(user)
-            }
-        });
+        // users.forEach(user => {
+        //     if(user.email == email) {
+        //         props.setLoggedInUser(user)
+        //     }
+        // });
     }
 
     useEffect(() => {

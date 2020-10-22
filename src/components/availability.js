@@ -43,6 +43,31 @@ export default function Availability(props) {
     })
   }
 
+  // const daysArray = [{day: monday, id: "5f90b47a48514b748b280acc"}, tuesday, wednesday, thursday, friday, saturday]
+  const daysArray = [{day: monday, id: "5f90b47a48514b748b280acc"}]
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    daysArray.forEach(day => {          
+      axios.patch(
+        `http://localhost:5000/hours/${day.id}`,
+        {
+            hours: day.day
+        },
+      )
+      .then(response => {
+        console.log(response)
+      })
+      .then(
+        getHours()
+      )
+      .catch(error => {
+        console.log("An error occured", error)
+      });
+    })
+  }
+
   if(props.loggedInStatus == false) {
     return (
       <div className="availability-app">
@@ -89,7 +114,7 @@ export default function Availability(props) {
           <h1>Availability</h1>
         </div>
         <button onClick={() => populateHours()}>Click me</button>
-        <div className="days-wrapper">
+        <form className="days-wrapper" onSubmit={() => handleSubmit(event)}>
           <div className="hours-wrapper">
             <p>Monday:</p>
             <input type="text" value={monday} onChange={e => setMonday(e.target.value)} />
@@ -119,7 +144,13 @@ export default function Availability(props) {
             <p>Saturday:</p>
             <input type="text" value={saturday} onChange={e => setSaturday(e.target.value)} />
           </div>   
-        </div>
+
+          <div className="save-wrapper">
+            <button type="submit">Save Changes</button>
+          </div>
+        </form>
+
+        <div className="save-wrapper"></div>
   
         <div className="nav-contact-wrapper">
           <p id="nav-contact" onClick={() => navigate("/contact")}>Click here to contact me about an appointment or interveiw</p>

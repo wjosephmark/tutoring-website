@@ -18,7 +18,7 @@ function Main() {
   const [login, setLogin] = useState("nav-link")
   const [account, setAccount] = useState("nav-link")
   const [navbarClass, setNavbarClass] = useState("navbar-wrapper")
-  const [loggedInStatus, setLoggedInStatus] = useState(true)
+  const [loggedInStatus, setLoggedInStatus] = useState(false)
   const [loggedInUser, setLoggedInUser] = useState([])
   
   const routes = {
@@ -119,9 +119,9 @@ function Main() {
             <div className="nav-link-wrapper">
               <A className={contact} onClick={() => handleContactClick()} href="/contact">Contact</A>
             </div>
-            <div className="nav-link-wrapper">
+            {/* <div className="nav-link-wrapper">
               <A className={account} onClick={() => handleAccountClick()} href="/account">Account</A>
-            </div>
+            </div> */}
           </div>
         </div>
         {useRoutes(routes)}

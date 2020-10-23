@@ -91,7 +91,7 @@ export default function Auth(props) {
                     </div>
                     <div className="buttons-wrapper">
                         <button className="btn" onClick={() => handleLoginClick()}>Login</button>
-                        <button className="btn"  onClick={() =>setAuthStatus("create-wrapper")}>Create Account</button>
+                        {/* <button className="btn"  onClick={() =>setAuthStatus("create-wrapper")}>Create Account</button> */}
                     </div>
     
                 </div>

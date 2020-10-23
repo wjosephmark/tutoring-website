@@ -15,18 +15,27 @@ export default function Availability(props) {
   useEffect(() => {
     getHours()
     props.handleAvailabilityClick("nav-link-active")
-    populateHours()
   }, [])
 
   const getHours = () => {
     axios.get("http://localhost:5000/hours")
-      .then(data => setHours(data.data))
-      .then(populateHours())
+      .then(data => {
+        setHours(data.data)
+        populateHours(data.data)})
       .catch(err => console.log(err))
   }
 
-  const populateHours = () => {
-    hours.forEach(hour => {
+  const populateHours = (arr) => {
+
+    arr.forEach(hour => {
+      // switch (hour.day){
+      //   case "Monday":
+      //     setModnay();
+      //     break
+      //   default:
+      //     break
+      // }
+      
       if(hour.day == "Monday") {
         setMonday(hour.hours)
       } else if(hour.day == "Tuesday") {
@@ -44,12 +53,17 @@ export default function Availability(props) {
   }
 
   // const daysArray = [{day: monday, id: "5f90b47a48514b748b280acc"}, tuesday, wednesday, thursday, friday, saturday]
-  const daysArray = [{day: monday, id: "5f90b47a48514b748b280acc"}]
+  const daysArray = [{day: monday, id: "5f90b47a48514b748b280acc"}, 
+    {day: tuesday, id: "5f90bf8efc588a74d296a0bb"}, 
+    {day: wednesday, id: "5f90bf94fc588a74d296a0bc"}, 
+    {day: thursday, id: "5f90bf9cfc588a74d296a0bd"}, 
+    {day: friday, id: "5f90bfa1fc588a74d296a0be"}, 
+    {day: saturday, id: "5f90bfa9fc588a74d296a0bf"}]
 
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    daysArray.forEach(day => {          
+    daysArray.forEach(day => {    
       axios.patch(
         `http://localhost:5000/hours/${day.id}`,
         {
@@ -64,7 +78,7 @@ export default function Availability(props) {
       )
       .catch(error => {
         console.log("An error occured", error)
-      });
+      });      
     })
   }
 

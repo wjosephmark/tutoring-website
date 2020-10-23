@@ -10,11 +10,14 @@
             justify-content: space-evenly;
             width: 300px;
             button {
-                width: 80px;
+                width: auto;
+                min-width: 80px;
                 height: 40px;
                 border: solid 2px rgb(255, 43, 209);
                 border-radius: 12px;
                 margin-top: -40px;
+                padding-left: 5px;
+                padding-right: 5px;
 
                 &:focus{
                     outline: none;
@@ -51,10 +54,13 @@
             background-color: rgb(245, 245, 245);
         }
         button {
-            width: 80px;
+            min-width: 80px;
+            width: auto;
             height: 40px;
             border: solid 2px rgb(255, 43, 209);
             border-radius: 12px;
+            padding-left: 5px;
+            padding-right: 5px;
 
             &:focus{
                 outline: none;

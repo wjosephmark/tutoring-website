@@ -5,52 +5,53 @@ import {navigate} from "hookrouter";
 export default function Availability(props) {
   
   const [hours, setHours] = useState([])
-  const [monday, setMonday] = useState("")
-  const [tuesday , setTuesday] = useState("")
-  const [wednesday, setWednesday] = useState("")
-  const [thursday, setThursday] = useState("")
-  const [friday, setFriday] = useState("")
-  const [saturday, setSaturday] = useState("")
+  const [monday, setMonday] = useState("11 AM - 1 PM online, 5:30 PM - 8:30 PM online or in person")
+  const [tuesday , setTuesday] = useState("12 PM - 3 PM online, 4:30 PM - 8 PM  online or in person")
+  const [wednesday, setWednesday] = useState("11 AM - 1 PM online, 5:30 PM - 8:30 PM online or in person")
+  const [thursday, setThursday] = useState("12 PM - 2:30 PM online, 7 PM - 8 PM  online or in person")
+  const [friday, setFriday] = useState("5:30 PM - 8 PM  online or in person")
+  const [saturday, setSaturday] = useState("12 PM - 4 PM online")
+  const [sunday, setSunday] = useState("12 PM - 4 PM online")
 
   useEffect(() => {
-    getHours()
+    // getHours()
     props.handleAvailabilityClick("nav-link-active")
   }, [])
 
-  const getHours = () => {
-    axios.get("http://localhost:5000/hours")
-      .then(data => {
-        setHours(data.data)
-        populateHours(data.data)})
-      .catch(err => console.log(err))
-  }
+  // const getHours = () => {
+  //   axios.get("http://localhost:5000/hours")
+  //     .then(data => {
+  //       setHours(data.data)
+  //       populateHours(data.data)})
+  //     .catch(err => console.log(err))
+  // }
 
-  const populateHours = (arr) => {
+  // const populateHours = (arr) => {
 
-    arr.forEach(hour => {
-      // switch (hour.day){
-      //   case "Monday":
-      //     setModnay();
-      //     break
-      //   default:
-      //     break
-      // }
+  //   arr.forEach(hour => {
+  //     // switch (hour.day){
+  //     //   case "Monday":
+  //     //     setModnay();
+  //     //     break
+  //     //   default:
+  //     //     break
+  //     // }
       
-      if(hour.day == "Monday") {
-        setMonday(hour.hours)
-      } else if(hour.day == "Tuesday") {
-        setTuesday(hour.hours)
-      } else if(hour.day == "Wednesday") {
-        setWednesday(hour.hours)
-      } else if(hour.day == "Thursday") {
-        setThursday(hour.hours)
-      } else if(hour.day == "Friday") {
-        setFriday(hour.hours)
-      } else if(hour.day == "Saturday") {
-        setSaturday(hour.hours)
-      }
-    })
-  }
+  //     // if(hour.day == "Monday") {
+  //     //   setMonday(hour.hours)
+  //     // } else if(hour.day == "Tuesday") {
+  //     //   setTuesday(hour.hours)
+  //     // } else if(hour.day == "Wednesday") {
+  //     //   setWednesday(hour.hours)
+  //     // } else if(hour.day == "Thursday") {
+  //     //   setThursday(hour.hours)
+  //     // } else if(hour.day == "Friday") {
+  //     //   setFriday(hour.hours)
+  //     // } else if(hour.day == "Saturday") {
+  //     //   setSaturday(hour.hours)
+  //     // }
+  //   })
+  // }
 
   // const daysArray = [{day: monday, id: "5f90b47a48514b748b280acc"}, tuesday, wednesday, thursday, friday, saturday]
   const daysArray = [{day: monday, id: "5f90b47a48514b748b280acc"}, 
@@ -88,30 +89,40 @@ export default function Availability(props) {
         <div className="header-wrapper">
           <h1>Availability</h1>
         </div>
-        <button onClick={() => populateHours()}>Click me</button>
         <div className="days-wrapper">
           <div className="hours-wrapper">
-            <p>Monday: {monday}</p>
+            <p className="day-wrapper">Monday:</p> 
+            <p>{monday}</p>
           </div>   
   
           <div className="hours-wrapper">
-            <p>Tuesday: {tuesday}</p>
+            <p className="day-wrapper"> Tuesday:</p> 
+            <p>{tuesday}</p>
           </div>  
   
           <div className="hours-wrapper">
-            <p>Wednesday: {wednesday}</p>
+            <p className="day-wrapper">Wednesday:</p> 
+            <p>{wednesday}</p>
           </div>  
   
           <div className="hours-wrapper">
-            <p>Thursday: {thursday}</p>
+            <p className="day-wrapper">Thursday:</p> 
+            <p>{thursday}</p>
           </div>  
   
           <div className="hours-wrapper">
-            <p>Friday: {friday}</p>
+            <p className="day-wrapper"> Friday:</p> 
+            <p>{friday}</p>
           </div>   
   
           <div className="hours-wrapper">
-            <p>Saturday: {saturday}</p>
+            <p className="day-wrapper"> Saturday:</p> 
+            <p>{saturday}</p>
+          </div>
+
+          <div className="hours-wrapper">
+            <p className="day-wrapper">Sunday:</p> 
+            <p>{sunday}</p>
           </div>   
         </div>
   
@@ -127,7 +138,6 @@ export default function Availability(props) {
         <div className="header-wrapper">
           <h1>Availability</h1>
         </div>
-        <button onClick={() => populateHours()}>Click me</button>
         <form className="days-wrapper" onSubmit={() => handleSubmit(event)}>
           <div className="hours-wrapper">
             <p>Monday:</p>
@@ -157,6 +167,11 @@ export default function Availability(props) {
           <div className="hours-wrapper">
             <p>Saturday:</p>
             <input type="text" value={saturday} onChange={e => setSaturday(e.target.value)} />
+          </div>   
+
+          <div className="hours-wrapper">
+            <p>Sunday:</p>
+            <input type="text" value={Sunday} onChange={e => setSaturday(e.target.value)} />
           </div>   
 
           <div className="save-wrapper">

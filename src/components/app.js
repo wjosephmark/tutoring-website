@@ -14,9 +14,16 @@ export default function App(props) {
           <div className="first-image-wrapper"> 
             <img id="first-image" src="https://i.ibb.co/jMstMqQ/kid-doing-math.png" />
           </div>
-          <p className="home-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in tempus est. Sed ac urna lobortis, laoreet arcu sit amet, lacinia dui. Sed mattis lectus eget enim placerat, nec lobortis sapien tincidunt. Maecenas eleifend ultrices massa vel commodo. Etiam faucibus neque sed nibh venenatis sodales. Proin sodales condimentum fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut sagittis, risus sed maximus egestas, nisl purus consectetur turpis, at efficitur risus enim nec urna. Aliquam convallis, diam et efficitur ornare, elit elit cursus erat, a vehicula velit dolor id risus. Vivamus suscipit ultricies urna, in pulvinar nulla tempor eu. Etiam sapien ligula, maximus eget nisi id, tincidunt ultrices turpis. Phasellus a feugiat orci. Proin dolor orci, sollicitudin in dui vel, vestibulum semper libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in tempus est. Sed ac urna lobortis, laoreet arcu sit amet, lacinia dui. Sed mattis lectus eget enim placerat, nec lobortis sapien tincidunt.
-          </p>
+          <div className="home-text">
+            <p>
+              My name is Kilee Rohlf.  I was raised in Montana where I attended Bozeman High School.  I was a state champion swimmer, and Valedictorian for my class.  I moved to Utah to attend school as a math major at BYU.  I attended class at BYU for 3 years until I transfered to the U of U in 2020.
+            </p>
+            <p>
+              During quarantine, everyone is struggling with their online classes.  The virtual classrooms make it difficult for children to develop a relationship with their teacher and get the personalized help that they need with problems that they are struggling with.  
+              Having a tutor is almost a necessity for all classes in 2020, especially when you take all the complex challenges of equations, algorithms, and other difficult aspects of math classes.  I will offer personalized help to your child that will help them deeply 
+              understand and get a firm grasp on the concepts they are being taught.  I will teach them while we complete their assignments so they will be ahead in class, and I will make sure they are ready for everything from a pop quiz to the class final.
+            </p>
+          </div>
         </div>
       </div>
     </div>

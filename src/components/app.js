@@ -20,7 +20,7 @@ export default function App(props) {
             </p>
             <p>
               During quarantine, everyone is struggling with their online classes.  The virtual classrooms make it difficult for children to develop a relationship with their teacher and get the personalized help that they need with problems that they are struggling with.  
-              Having a tutor is almost a necessity for all classes in 2020, especially when you take all the complex challenges of equations, algorithms, and other difficult aspects of math classes.  I will offer personalized help to your child that will help them deeply 
+              Having a tutor is almost a necessity for all classes in 2020, especially when you take all the complex challenges of equations, algorithms, and other difficult aspects of math classes into consideration.  I will offer personalized help to your child that will help them deeply 
               understand and get a firm grasp on the concepts they are being taught.  I will teach them while we complete their assignments so they will be ahead in class, and I will make sure they are ready for everything from a pop quiz to the class final.
             </p>
           </div>

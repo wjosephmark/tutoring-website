@@ -16,7 +16,7 @@ export default function App(props) {
           </div>
           <div className="home-text">
             <p>
-              My name is Kilee Rohlf.  I was raised in Montana where I attended Bozeman High School.  I was a state champion swimmer, and Valedictorian for my class.  I moved to Utah to attend school as a math major at BYU.  I attended class at BYU for 3 years until I transfered to the U of U in 2020.
+              My name is Kilee Rohlf.  I was raised in Montana where I attended Bozeman High School and maintained a 4.0 GPA throug all four years.  I was a state champion swimmer, and Valedictorian for my class.  I moved to Utah to attend school as a math major at BYU on an acedemic and athletic scholarship.  I attended class at BYU for 3 years until I transfered to the U of U in 2020.
             </p>
             <p>
               During quarantine, everyone is struggling with their online classes.  The virtual classrooms make it difficult for children to develop a relationship with their teacher and get the personalized help that they need with problems that they are struggling with.  
